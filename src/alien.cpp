@@ -39,11 +39,18 @@ int Alien::GetType()
 
 void Alien::UnlaodImages()
 {
-    for(int i=0;i<4;i++){
+    for (int i = 0; i < 4; i++)
+    {
         UnloadTexture(alienImages[i]);
     }
 }
 
-void Alien::Update(int direction){
-    position.x+=direction;
+void Alien::Update(int direction)
+{
+    position.x += direction;
+}
+
+Rectangle Alien::getRect()
+{
+    return {position.x, position.y, float(alienImages[type - 1].width), float(alienImages[type - 1].height)};
 }

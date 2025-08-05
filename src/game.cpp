@@ -279,5 +279,10 @@ void Game::CheckForCollisions()
         }
       }
     }
+
+    if (CheckCollisionRecs(alien.getRect(), spaceship.getRect()))
+    {
+      std::cout << "Alien hits the spaceship" << std::endl;
+    }
   }
 }

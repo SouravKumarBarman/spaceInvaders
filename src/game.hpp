@@ -13,6 +13,8 @@ public:
     void Update();
     void HandleInput();
     bool run;
+    int lives;
+    int score;
 
 private:
     void DeleteInactiveLasers();
@@ -32,7 +34,6 @@ private:
     float mystryShipSpawnInterval;
     float timeLastSpawn;
     void CheckForCollisions();
-    int lives;
     void GameOver();
     void Reset();
     void InitGame();

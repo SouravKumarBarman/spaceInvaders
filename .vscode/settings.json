@@ -6,7 +6,7 @@
 		"**/CVS": true,
 		"**/.DS_Store": true,
 		"**/*.o": true,
-		"**/*.exe": true,
+		"**/*.exe": false,
 	},
 	"files.associations": {
 		"*.ejs": "html",

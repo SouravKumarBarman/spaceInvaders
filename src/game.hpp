@@ -15,6 +15,7 @@ public:
     bool run;
     int lives;
     int score;
+    int highScore;
 
 private:
     void DeleteInactiveLasers();
@@ -37,4 +38,7 @@ private:
     void GameOver();
     void Reset();
     void InitGame();
+    void CheckForHighScore();
+    void SaveHighScoreToFile(int highScore);
+    int LoadHighScoreFromFile();
 };

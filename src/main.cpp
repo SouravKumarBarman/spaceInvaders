@@ -1,6 +1,14 @@
 #include <raylib.h>
 #include "game.hpp"
 #include "obstacle.hpp"
+#include <string>
+
+std::string FormatWithLeadingZeros(int number, int width)
+{
+    std::string numberText = std::to_string(number);
+    int leadingZeros = width - numberText.length();
+    return numberText = std::string(leadingZeros, '0') + numberText;
+}
 
 int main()
 {
@@ -41,7 +49,15 @@ int main()
             DrawTexture(spaceshipImage, x, 770, yellow);
             x += 50;
         }
+
         DrawTextEx(font, "SCORE", {50, 15}, 34, 2, yellow);
+        std::string scoreText = FormatWithLeadingZeros(game.score, 5);
+        DrawTextEx(font, scoreText.c_str(), {50, 40}, 34, 2, yellow);
+
+        DrawTextEx(font, "HIGH-SCORE", {570, 15}, 34, 2, yellow);
+        std::string highScoreText = FormatWithLeadingZeros(game.highScore, 5);
+        DrawTextEx(font, highScoreText.c_str(), {570, 40}, 34, 2, yellow);
+
         game.Draw();
         EndDrawing();
     }
